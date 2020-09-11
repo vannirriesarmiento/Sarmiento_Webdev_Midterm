@@ -74,7 +74,8 @@ input {
 }
 
 .container {
-  width:98%;
+  left: 200px;
+  width:66%;
   height: 540px;
   position: absolute;
   background: #fff;
@@ -174,22 +175,6 @@ section {
   background: #555;
 }
   </style>
-  
-  <script>
-  let selected = document.getElementsByClassName('selected')[0];
-
-function setSelected(e) {
-  if (e.target != selected) {
-    // Remove old selected classname
-    selected.classList.remove('selected');
-    // Set the new selected
-    selected = e.target.parentNode;
-    // Set the classname
-    selected.classList.add('selected');    
-  }
-
-}
-  </script>
   
 </head>
 
@@ -459,6 +444,24 @@ function setSelected(e) {
     </div>
   </div>
   </div>
+
+<script>
+  let selected = document.getElementsByClassName('selected')[0];
+
+function setSelected(e) {
+  if (e.target != selected) {
+    // Remove old selected classname
+    selected.classList.remove('selected');
+    // Set the new selected
+    selected = e.target.parentNode;
+    // Set the classname
+    selected.classList.add('selected');    
+  }
+
+}
+  </script>
+  
+
 </body>
 
 </html>
