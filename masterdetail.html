@@ -1,0 +1,463 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=">
+
+  <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+
+  <title>Master Detail Pattern</title>
+  
+  <style>
+  body {
+  color: #000;
+  font-size: 15px;
+  background: #000;
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  color: #0339fc;
+  border: 0px;
+  transition: 1s;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #286985;
+  transition: 1s;
+}
+
+b {
+  font-weight: 700;
+  color: #999;
+}
+
+h1 {
+  color: #fff;
+  font-size: 32px;
+  text-align: center;
+  font-family: "Francois One", sans-serif;
+}
+
+h2 {
+  padding:3px;
+  color: #000;
+  margin: 5px;
+  font-size: 26px;
+  text-align: center;
+  border-bottom: 2px solid #000;
+  font-family: "Raleway", sans-serif;
+}
+
+table {
+  width: 500px;
+  height: 400px;
+}
+
+th {
+  align: center;
+}
+
+td {
+  text-align: center;
+  padding: 5px;
+}
+
+input {
+  border: 1px solid #a3a3a3;
+  padding: 5px;
+  margin: 0px;
+}
+
+.container {
+  width:98%;
+  height: 540px;
+  position: absolute;
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+.sidebar{
+  width: 210px;
+  float:left;
+  height: 540px;
+  align:left;
+  background: #a3a3a3;
+  border-right: 2px solid #fff;
+}
+
+.sidebar a {
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 15px;
+  width: 180px;
+  border-bottom: 2px solid #fff;
+  background: #a3a3a3;
+  color: #fff;
+  transition: 1s;
+}
+
+.sidebar a:hover {
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.item {
+  display: flex;
+  height: 60px;
+  width: 900px;
+}
+
+.content{
+  margin-top: -290px;
+}
+
+.content6{
+  margin-top: -50px;
+}
+
+.content5{
+  margin-top: -100px;
+}
+
+.content4{
+  margin-top: -230px;
+}
+
+.content2{
+  margin-top: -290px;
+}
+
+.content3{
+  margin-top: -170px;
+}
+
+.selected section {
+  display: block;
+}
+
+section {
+  overflow-x:scroll;
+  width: 600px;
+  height: 510px;
+  display: inline-block;
+  padding: 5px;
+  background: #fff;
+  margin: 10px;
+  z-index: 999999999;
+  display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+  </style>
+  
+  <script>
+  let selected = document.getElementsByClassName('selected')[0];
+
+function setSelected(e) {
+  if (e.target != selected) {
+    // Remove old selected classname
+    selected.classList.remove('selected');
+    // Set the new selected
+    selected = e.target.parentNode;
+    // Set the classname
+    selected.classList.add('selected');    
+  }
+
+}
+  </script>
+  
+</head>
+
+<body>
+  <h1>
+    <center>MASTER DETAIL PATTERN </center>
+  </h1>
+
+  <div class="container">
+    <div class="sidebar">
+      <li class="item selected">
+        <a href="#" onclick="setSelected(event)">Activities</a><br>
+        <section>
+          <h2>Welcome!!!!</h2>
+          <center>
+            <p><b>DISCLAIMER</b><br>This is my very own version of a Master Detail Pattern, therfore <br>I tried to create one in ways I know how. I am still learning & I hope you<br> enjoy your stay! <br><br>Submitted to<br>Mr. Clyde Balaman<br>Instructor<br><br>Submitted by <br>Mae Kristine Vannirrie Sarmiento<br><br>BSIT-IT 2A<br><br>2020</p>
+          </center>
+
+        </section>
+      </li>
+
+      <li class="item">
+        <a href="#" onclick="setSelected(event)">Registration Page</a>
+        <section class="content6">
+          <center>
+            <h2>YAMAHA<br>Music School Registration</h2>
+            <p>
+              <center>A registration interface for end users interested in enrolling into a music school.</center>
+            </p>
+            <table align="center">
+              <form action="/action_page.php">
+                <tr>
+                  <td align="center">Name</td>
+                  <td><input type="text" id="txtFName" name="txtName" placeholder="First Name" style="width:130px;"></td>
+                  <td><input type="text" id="txtLName" name="txtName" placeholder="Last Name" style="width:130px;"></td>
+                </tr>
+                <tr>
+                  <td align="center">Gender</td>
+                  <td colspan="2"><input type="radio" id="male" name="gender" value="male" style="width:10px;" checked><label for="male" style="font-size:14px; padding:5px;">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" style="width:10px;"><label for="female" style="font-size:14px; padding:5px;">Female</label>
+                    <input type="radio" id="other" name="gender" value="other" style="width:10px;"><label for="other" style="font-size:14px; padding: 5px;">Other</label></td>
+                </tr>
+                <tr>
+                  <td align="center">Username</td>
+                  <td colspan="2"><input type="text" id="txtUsername" name="textUserName" placeholder="@user735281922" style="width:285px;"></td>
+                </tr>
+                <tr>
+                  <td align="center">Email</td>
+                  <td colspan="2"><input type="email" id="txtEmail" name="txtEmail" placeholder="ecullens@hotmail.com" style="width:285px;"></td>
+                </tr>
+                <tr>
+                  <td align="center">Password</td>
+                  <td colspan="2"><input type="password" id="txtPassword" placeholder="Min. 8 Characters" style="width:285px;"></td>
+                </tr>
+                <tr>
+                  <td align="center">Birthday</td>
+                  <td colspan="2"><input type="date" style="width:285px; border: 1px solid #a3a3a3; color: #363535;"></td>
+                </tr>
+                <tr>
+                  <td align="center">Phone</td>
+                  <td colspan="2"><input type="tel" id="txtPhone" placeholder="(08)-234-654" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" style="width:285px;"></td>
+                </tr>
+                <tr>
+                  <td align="center">Choice of<br>Instrument</td>
+                  <td colspan="2"><select name="drpLoginType" id="drpLoginType" style="width:297px; padding:5px;border:1px solid #a3a3a3;">
+                      <option value="Guest">Acoustic Guitar</option>
+                      <option value="Guest">Electric Guitar</option>
+                      <option value="Guest">Flute</option>
+                      <option value="Guest">Piano</option>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">Days for<br>Classes</td>
+                  <td><input type="checkbox" id="monclass" style="width:11px;"><label for="monclass" style="font-size:14px;padding:5px;">Monday</label><br>
+                    <input type="checkbox" id="tueclass" style="width:11px;"><label for="monclass" style="font-size:14px;padding:5px;">Tuesday</label><br>
+                    <input type="checkbox" id="wedclass" style="width:11px;"><label for="wedclass" style="font-size:14px;padding:5px;">Wednesday</label><br>
+                    <input type="checkbox" id="thuclass" style="width:11px;"><label for="thuclass" style="font-size:14px;padding:5px;">Thursday</label>
+                  <td>
+                    <input type="checkbox" id="friclass" style="width:11px;"><label for="friclass" style="font-size:14px;padding:5px;">Friday</label><br>
+                    <input type="checkbox" id="satclass" style="width:11px;"><label for="satclass" style="font-size:14px;padding:5px;">Saturday</label><br>
+                    <input type="checkbox" id="sunclass" style="width:11px;"><label for="sunclass" style="font-size:14px;padding:5px;">Sunday</label>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <input type="checkbox" id="termsncondition" name="option" value="termsncondition" style="width:10px;"><label for="termsncondition" style="font-size:12px;"> I read and agree to the <label style="color: #2d759c;">Terms & Conditions</label> and <label style="color: #2d759c;">Privacy Policy</label>.</label><br>
+                    <input type="checkbox" id="subscription" name="option" value="subscription" style="width:10px;"><label for="subscription" style="font-size:12px;"> I am interested in receiving emails about Yamaha Music & other upcoming events.</label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="reset">
+                  </td>
+                  <td colspan="2" align="right">
+                    <button id="btnLogin" onClick="alert('Submitted! Thank you!')">Login</button>
+                  </td>
+                </tr>
+              </form>
+            </table>
+          </center>
+        </section>
+      </li>
+
+      <li class="item">
+        <a href="#" onclick="setSelected(event)">Calendar Page</a>
+        <section class="content5">
+          <center>
+            <table>
+
+              <tr>
+                <th colspan="7"><h2>MAY 2001</h2></th>
+              </tr>
+
+              <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+              </tr>
+
+              <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+
+              <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td><b>10</b></td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+              </tr>
+
+              <tr>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+              </tr>
+
+              <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+              </tr>
+
+              <tr>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+              </tr>
+
+            </table>
+          </center>
+        </section>
+      </li>
+
+      <li class="item">
+        <a href="#" class="masterlist" onclick="setSelected(event)">Wishlist Page</a>
+        <section class="content3">
+          <h2>Challenge: Wishlist</h2>
+
+          <ol style="font-size: 18px;">
+            <li>iPhone 11</li>
+            <li>House & Lot</li>
+            <li>Dell Inspiron Laptop</li>
+            <li>Toyota Rush</li>
+            <li>Plane Tickets to:
+              <ul>
+                <li>UK, London</li>
+                <li>Dubai, UAE</li>
+                <li>Shibuya, Japan</li>
+                <li>Cebu, Philippines</li>
+              </ul>
+            </li>
+            <li>Porcelain Veneers</li>
+            <li>Onitsuka Mexico 66</li>
+            <li>Air Jordan 1</li>
+        </section>
+      </li>
+
+      <li class="item">
+        <a href="#" onclick="setSelected(event)">Markup Page</a>
+        <section class="content4">
+          <h2>I See your Silhouette</h2>
+          <p><center>
+            <b>I see your silhouette, </b> <br>
+            An artist in a museum, <br>
+            Hundreds of creatives surround, <br>
+            But my eyes still land on you <br>
+          </p>
+          <p>
+            Paint my back like a canvass, <br>
+            Soften my heart like paint in water, <br>
+            For for every stroke, <br>
+            I am filled with color <br>
+          </p>
+          <p>
+            <b> I see your silhouette, </b> <br>
+            A writer in his comfort, <br>
+            Hundreds of papers surround, <br>
+            But you chose this one poem <br>
+          </p>
+          <p>
+            Write over me your secrets, <br>
+            Your wishes and unpleasant memories, <br>
+            <em>And though I'll bleed in red ink, </em><br>
+            <em>I'll love you even so </em>
+          </p>
+          <p>
+            -V
+          </center></p>
+        </section>
+      </li>
+
+      <li class="item">
+        <a href="#" onclick="setSelected(event)">Poem page</a>
+        <section class="content">
+          <h2>I See your Silhouette</h2>
+          <p><center>
+            I see your silhouette, <br>
+            An artist in a museum, <br>
+            Hundreds of creatives surround, <br>
+            But my eyes still land on you <br>
+          </p>
+          <p>
+            Paint my back like a canvass, <br>
+            Soften my heart like paint in water, <br>
+            For for every stroke, <br>
+            I am filled with color <br>
+          </p>
+          <p>
+            I see your silhouette, <br>
+            A writer in his comfort, <br>
+            Hundreds of papers surround, <br>
+            But you chose this one poem <br>
+          </p>
+          <p>
+            Write over me your secrets, <br>
+            Your wishes and unpleasant memories, <br>
+            And though I'll bleed in red ink, <br>
+            I'll love you even so
+          </p>
+          <p>
+            -V
+          </p></center>
+        </section>
+      </li>
+
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
