@@ -12,7 +12,7 @@
   <title>Master Detail Pattern</title>
   
   <style>
-  body {
+    body {
   color: #000;
   font-size: 15px;
   background: #000;
@@ -54,7 +54,7 @@ h2 {
 }
 
 table {
-  width: 500px;
+  width: 400px;
   height: 400px;
 }
 
@@ -72,8 +72,9 @@ input {
   margin: 0px;
 }
 
-.container {
+#container {
   left: 200px;
+  right: auto;
   width:66%;
   height: 540px;
   position: absolute;
@@ -182,7 +183,7 @@ section {
     <center>MASTER DETAIL PATTERN </center>
   </h1>
 
-  <div class="container">
+  <div id="container">
     <div class="sidebar">
       <li class="item selected">
         <a href="#" onclick="setSelected(event)">Activities</a><br>
@@ -267,7 +268,7 @@ section {
                     <input type="reset">
                   </td>
                   <td colspan="2" align="right">
-                    <button id="btnLogin" onClick="alert('Submitted! Thank you!')">Login</button>
+                    <button id="btnLogin" onClick="alert('Submitted! Thank you!')">Submit</button>
                   </td>
                 </tr>
               </form>
@@ -342,7 +343,7 @@ section {
                 <td align="center">30</td>
                 <td align="center">31</td>
               </tr>
-              
+
             </table>
           </center>
         </section>
@@ -445,7 +446,7 @@ section {
   </div>
 
 <script>
-  let selected = document.getElementsByClassName('selected')[0];
+let selected = document.getElementsByClassName('selected')[0];
 
 function setSelected(e) {
   if (e.target != selected) {
@@ -458,8 +459,7 @@ function setSelected(e) {
   }
 
 }
-  </script>
-  
+</script>
 
 </body>
 
