@@ -1,8 +1,9 @@
 # Sarmiento_Webdev_Midterm
 ###### + css
-[   - calendar.css](https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/calendar.css)
+  [- calendar.css](https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/calendar.css)
 ###### + img
-[   - calendar.jpeg](https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/calendar.jpeg)
+  [- calendar.jpeg](https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/calendar.jpeg)
+
 
 [- vmg.html](https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/vmg.html)
 
