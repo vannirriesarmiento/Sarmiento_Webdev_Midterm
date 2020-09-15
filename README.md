@@ -4,6 +4,8 @@
 ###### + img
   [- calendar.jpeg](https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/calendar.jpeg)
 ###### + html
+[-calendarwithcss.html](https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/calendarwithcss.html)
+
 [- vmg.html](https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/vmg.html)
 
 [- video.mp4](https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/video.mp4)
