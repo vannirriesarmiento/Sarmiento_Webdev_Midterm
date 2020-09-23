@@ -1,6 +1,7 @@
 body {
   font-family: "Arial";
-  overflow: hidden; 
+  overflow-x: hidden; 
+  overflow-y: hidden; 
 }
 
 a{
@@ -96,7 +97,11 @@ button:hover{
   display: block;
   position: absolute;
   font-size: 15px;
-  color: #666565;
+  color: #7a7a7a;
   padding: 10px 0px 0px 0px;
   border-top: 1px solid #ddd;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
