@@ -1,5 +1,6 @@
 body {
   font-family: "Arial";
+  overflow: hidden; 
 }
 
 a{
@@ -16,7 +17,7 @@ p{
 }
 
 hr.solid {
-  border-top: 1px solid #bbb;
+  border-top: 1px solid #ddd;
 }
 
 input{
