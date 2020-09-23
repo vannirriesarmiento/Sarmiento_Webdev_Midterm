@@ -1,0 +1,101 @@
+body {
+  font-family: "Arial";
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+p{
+  font-size: 12px;
+}
+
+hr.solid {
+  border-top: 1px solid #bbb;
+}
+
+input{
+  margin: 20px;
+  background-image: url("https://img.pngio.com/search-icon-search-icon-png-512_512.png");
+  background-size: 23px;
+  background-position: 9px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  text-align: left;
+  width: 570px;
+  font-size: 16px;
+  height: 40px;
+}
+
+input:hover {
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 5px #ccc;
+}
+
+input:focus{
+  outline:none;
+}
+
+button {
+  color: #666;
+  border: none;
+  padding: 8px 15px 8px 15px;
+  font-size: 15px;
+  background: #fff;
+  margin: 0px 5px 0px 5px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
+
+button:hover{
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+.input_img {
+  position: relative;
+  bottom: -5px;
+  right: 60px;
+  width: 15px;
+}
+
+.bottom_link{
+  color: #0202b0;
+}
+
+.img_icon{
+  opacity: 0.60;
+}
+
+.img_icon:hover{
+  cursor: pointer;
+  opacity: 1.0;
+}
+
+#header{
+  margin: 10px;
+  float: right;
+  font-size: 13px;
+  position: relative;
+  background: #ffbabaa;
+}
+
+#footer{
+  bottom: 0px;
+  margin: -5px;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  font-size: 15px;
+  color: #666565;
+  padding: 10px 0px 0px 0px;
+  border-top: 1px solid #ddd;
+}
