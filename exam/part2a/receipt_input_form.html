@@ -1,0 +1,112 @@
+<!--!DOCTYPE html>-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=">
+  <title>Exam Part2a - Receipt Input Form</title>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="container">
+  <h1>Invoice</h1>
+
+  <table class="table1">
+    <tr>
+      <th align="left">DUE AMOUNT</th>
+      <th align="left">PROJECT</th>
+      <th>&nbsp;</th>
+      <th align="right">INVOICE NO.</th>
+    </tr>
+    <tr>
+      <td><input type="text" placeholder="e.g., 8 400€"></td>
+      <td><input type="text" placeholder="Enter name.."></td>
+      <td>&nbsp;</td>
+      <td align="right"><input type="text" placeholder="e.g., #201805"></td>
+    </tr>
+    <tr>
+      <th align="left">DUE DATE</th>
+      <th align="left">BILLED TO</th>
+      <th>&nbsp;</th>
+      <th align="right">BILLING DATE</th>
+    </tr>
+    <tr>
+      <td><input type="date" id="date"></td>
+      <td><input type="text" placeholder="Enter address.."></td>
+      <td>&nbsp;</td>
+      <td align="right"><input type="date" id="date" data-date="" data-date-format="DD MMMM YYYY" value="2015-08-09"></td>
+    </tr>
+  </table>
+
+  <table class="table2">
+    <tr>
+      <th align="left">NO.</th>
+      <th colspan="2" align="left">DESCRIPTION</th>
+      <th>HOURS</th>
+      <th>RATE</th>
+      <th>AMOUNT</th>
+    </tr>
+    <tr>
+      <td>01</td>
+      <td colspan="2"><input type="text" id="label" placeholder="Branding Logo Manual"></td>
+      <td align="center"><input type="number" min="1" max="50" placeholder="40"></td>
+      <td align="center"><input type="number" dir="rtl" min="1" max="50" placeholder="40">€</td>
+      <td align="center"><input type="number" dir="rtl" min="1" max="3000" placeholder="1600">€</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td colspan="2"><input type="text" id="label" placeholder="Web & App Wireframing"></td>
+      <td align="center"><input type="number" min="1" max="50" placeholder="30"></td>
+      <td align="center"><input type="number" dir="rtl" min="1" max="50" placeholder="40">€</td>
+      <td align="center"><input type="number" dir="rtl" min="1" max="3000" placeholder="1200">€</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td colspan="2"><input type="text" id="label" placeholder="Web Development"></td>
+      <td align="center"><input type="number" min="1" max="50" placeholder="35"></td>
+      <td align="center"><input type="number" dir="rtl" min="1" max="50" placeholder="40">€</td>
+      <td align="center"><input type="number" dir="rtl" min="1" max="3000" placeholder="2800">€</td>
+    </tr>
+    <tr>
+      <td>04</td>
+      <td colspan="2"><input type="text" id="label" placeholder="Mobile apps Development"></td>
+      <td align="center"><input type="number" min="1" max="50" placeholder="35"></td>
+      <td align="center"><input type="number" dir="rtl" min="1" max="50" placeholder="40">€</td>
+      <td align="center"><input type="number" dir="rtl" min="1" max="3000" placeholder="1400">€</td>
+    </tr>
+  </table><br>
+  <table class="table3">
+    <tr>
+      <td>Sub Total</td>
+      <td><input type="number" dir="rtl" min="1" max="30000" placeholder="7000">€</td>
+    </tr>
+    <tr>
+      <td>VAT - 20%</td>
+      <td><input type="number" dir="rtl" min="1" max="3000" placeholder="408">€</td>
+    </tr>
+  </table></br>
+  <div id="total"><b>TOTAL DUE</b><br><h2><input type="number" id="rate" dir="rtl" min="1" max="30000" placeholder="8400">€</h2></div>
+  <br></br><br></br><br></br>
+
+<div id="footer">
+  <table class="table4">
+    <tr>
+      <td><input type="text" id="label" placeholder="John Doe"></td>
+      <td>www.invoice.land</td>
+    </tr>
+    <tr>
+      <td><input type="text" id="label" placeholder="+1-202-555-0168"></td>
+      <td>hello@invoice.land</td>
+    </tr>
+  </table>
+  <h3>Thank You!</h3>
+  <br></br><br></br>
+</div>
+</div>
+</body>
+</html>
