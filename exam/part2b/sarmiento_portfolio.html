@@ -9,8 +9,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400;700&family=David+Libre&family=Old+Standard+TT:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    $(function() {
+      $(window).on("scroll", function() {
+        if ($(window).scrollTop() > 150) {
+          $(".header").addClass("active");
+        } else {
+          $(".header").removeClass("active");
+        }
+      });
+    });
+  </script>
 
-  <script>
+  <script type="text/javascript">
     var bgcolour = "#ffffff";
     var fgcolour = "#c2c2c2";
     var speed = 80;
@@ -73,23 +84,6 @@
       }
     }
   </script>
-  
-  <script>
-    $(function() {
-    $(window).on("scroll", function() {
-        if($(window).scrollTop() > 150) {
-            $(".header").addClass("active");
-        } else {
-            //remove the background property so it comes transparent again (defined in your css)
-           $(".header").removeClass("active");
-        }
-    });
-});
-
-  </script>
-
-  <script src="//static.tumblr.com/xeccbfq/Qgqnv9yqb/jquery.min.js"></script>
-  <script src="//static.tumblr.com/xeccbfq/V7Fnvbb38/libs.min.js"></script>
 
 </head>
 
@@ -98,7 +92,7 @@
   <div class="header">
 
     <span class="headermenu">VS</span>
-    <a class="headermenulink" href="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/exam/part2b/sarmiento_portfolio.html">Home</a>
+    <a class="headermenulink" href="/">Home</a>
     <a class="headermenulink" href="https://www.facebook.com/south.eastern.chic" target="_blank">Contact</a>
 
   </div>
