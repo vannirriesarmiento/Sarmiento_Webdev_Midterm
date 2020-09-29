@@ -1,0 +1,188 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=">
+  <title>Exam Part 2b - Web Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400;700&family=David+Libre&family=Old+Standard+TT:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script>
+    var bgcolour = "#ffffff";
+    var fgcolour = "#c2c2c2";
+    var speed = 80;
+    var shades = 12;
+    var bubbcol = new Array();
+    var bubbshd;
+    var bubbler, bubbtxt;
+    var bubbchr = new Array();
+
+    function addLoadEvent(funky) {
+      var oldonload = window.onload;
+      if (typeof(oldonload) != 'function') window.onload = funky;
+      else window.onload = function() {
+        if (oldonload) oldonload();
+        funky();
+      }
+    }
+    addLoadEvent(bubbagump);
+
+    function bubbagump() {
+      if (document.getElementById) {
+        var i, fg, bg, col;
+        for (bubbler = 0; bubbler <= shades; bubbler++) {
+          col = "#";
+          for (i = 1; i < 6; i += 2) {
+            bg = parseInt(bgcolour.substring(i, i + 2), 16);
+            fg = parseInt(fgcolour.substring(i, i + 2), 16);
+            col += dechex(bg + (fg - bg) * (bubbler / shades));
+          }
+          bubbcol[bubbler + 1] = col;
+          if (bubbler == Math.floor(shades / 2)) bubbshd = col;
+        }
+        bubbler = document.getElementById("bubble");
+        bubbtxt = bubbler.firstChild.nodeValue;
+        while (bubbler.childNodes.length) bubbler.removeChild(bubbler.childNodes[0]);
+        for (i = 0; i < bubbtxt.length; i++) {
+          fg = document.createElement("span");
+          fg.setAttribute("id", "bubb" + i);
+          fg.style.textShadow = bubbshd + " 0px 0px 2px";
+          fg.appendChild(document.createTextNode(bubbtxt.charAt(i)));
+          bubbler.appendChild(fg);
+        }
+        bubbler = setInterval("bubbling()", speed);
+      }
+    }
+
+    function dechex(dec) {
+      dec = Math.floor(dec);
+      return ((dec < 16) ? '0' : '') + dec.toString(16);
+    }
+
+    function bubbling() {
+      var i, bubby;
+      for (i = 0; i < bubbtxt.length; i++) {
+        bubby = document.getElementById("bubb" + i);
+        if (bubbchr[i]) {
+          bubby.style.color = bubbcol[bubbchr[i]];
+          bubbchr[i] = (bubbchr[i] + 1) % bubbcol.length;
+        } else if (Math.random() < 7.5 / (shades * bubbtxt.length)) bubbchr[i] = 1;
+      }
+    }
+  </script>
+
+  <script src="//static.tumblr.com/xeccbfq/Qgqnv9yqb/jquery.min.js"></script>
+  <script src="//static.tumblr.com/xeccbfq/V7Fnvbb38/libs.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="header">
+
+    <span class="headermenu">VS</span>
+    <a class="headermenulink" href="/">Home</a>
+    <a class="headermenulink" href="https://www.facebook.com/south.eastern.chic" target="_blank">Contact</a>
+
+  </div>
+
+  <div id="container">
+    <h1><span id="bubble">Vannirrie Sarmiento</span></h1>
+    <p>Allow me to introduce myself! I am a designer and a student-in-training. I am a 19 years old, female, IT student at University of Immaculate Conception. I like designing web pages and contributing to the creativity. I am still a novice to the ways of web developmen but here, you will see the collection of my projects throughout my Web Development class. I hope you enjoy your stay!</p><br>
+    <hr><br></br>
+    <center>
+
+      <div class="content">
+        <img src="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/exam/part2b/images/tribute.png">
+        <div class="overlay">
+          <div class="overlaytext">
+            <b>Tribute Page</b><br>
+            <blockquote>This is one of my latest piece. It is to commemorate my idol, Zendaya. I started with a simple HTML code that complements the achievements and beauty of the person I admire. My vision was to use light and neutral colors, such as linen, peach, white, and black. I used CSS to implement those.</blockquote></br><a href="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/act47/tribute.html" target="_blank" class="contentmenu">VIEW WEBPAGE</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <img src="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/exam/part2b/images/invoice.png">
+        <div class="overlay">
+          <div class="overlaytext">
+            <b>Invoice / Receipt Page</b><br>
+            <blockquote>We were tasked to find a receipt online and imitate its attributes but make it as a functional website. Webpage #1 is all about the web view of the receipt only. While, Webpage #2 contains the HTML forms. I only used input types that are only applicable, like textfield, numberfield, and a date input.</blockquote></br><a href="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/exam/part2a/receipt_web_view.html" target="_blank" class="contentmenu">VIEW WEBPAGE #1</a>&nbsp;<a href="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/exam/part2a/receipt_input_form.html" target="_blank" class="contentmenu">VIEW WEBPAGE #2</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <img src="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/exam/part2b/images/google.png">
+        <div class="overlay">
+          <div class="overlaytext">
+            <b>Copy of Google Main Page</b><br>
+            <blockquote>The creation of this webpage was all about my ability to copy Google's web design in my own little ways. In order to achieve this output, I keenly observed Google. I made sure I had atleast the right shades of the colors used. It was very time consuming but it was good practice to sharpen my skills.</blockquote></br><a href="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/act46/google.html" target="_blank" class="contentmenu">VIEW WEBPAGE</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <img src="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/exam/part2b/images/vmg.png">
+        <div class="overlay">
+          <div class="overlaytext">
+            <b>UIC Vison, Mision, & Goals</b><br>
+            <blockquote>When I created this, my classmates & I were still learning about the fundamentals of web development. Thus, the site will be basic & simple. We were tasked to attach a video & audio of ourselves reciting to UIC's VMG. I used basic HTML to attach the medias to the site. </blockquote></br><a href="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/vmg.html" target="_blank" class="contentmenu">VIEW WEBPAGE</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <img src="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/exam/part2b/images/testingcss.png">
+        <div class="overlay">
+          <div class="overlaytext">
+            <b>Testing CSS Page</b><br>
+            <blockquote>Disclaimer, the contents and design is not originally visualized and created by me. However, I followed certain steps & procedures to arrive in this web page. It helped me learn discipline and protocols, thus making me a better web developer. So, I showcase it here despite having no claim.</blockquote></br><a href="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/act45/testingcss.html" target="_blank" class="contentmenu">VIEW WEBPAGE</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <img src="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/exam/part2b/images/masterdetail.png">
+        <div class="overlay">
+          <div class="overlaytext">
+            <b>Masterdetail Page</b><br>
+            <blockquote>This webpage was the hardest one for me, because each page consists of the past activities we've already made. It was stored in a masterdetail platform. It was very time consuming. Still, I managed to apply CSS styling codes to make it more appealing. Nonetheless, it helped me with my understanding.</blockquote></br><a href="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/masterdetail.html" target="_blank" class="contentmenu">VIEW WEBPAGE</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <img src="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/exam/part2b/images/calendar.png">
+        <div class="overlay">
+          <div class="overlaytext">
+            <b>Birth Month Page</b><br>
+            <blockquote>This webpage was one of the first tasks my class was assigned to do. This is just a simple calendar of my birth month. I just added a repeating background and added complimentary colors, such as the hues of nature. It compliments the theme of the month of May.</blockquote></br><a href="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/calendarwithcss.html" target="_blank" class="contentmenu">VIEW WEBPAGE</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <img src="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/exam/part2b/images/markup.png">
+        <div class="overlay">
+          <div class="overlaytext">
+            <b>Markup Page</b><br>
+            <blockquote>This webpage was another one of the first tasks my class was assigned to do. It is just a basic layout of a poem with markins on it. I used the em and strong tag to emphasize the lines that needs bold and italicized markings on it to create a more indepth feeling of the poem. This thought me the use of tags.</blockquote></br><a href="https://vannirriesarmiento.github.io/Sarmiento_Webdev_Midterm/markup.html" target="_blank" class="contentmenu">VIEW WEBPAGE</a>
+          </div>
+        </div>
+      </div>
+    </center>
+  </div>
+
+  <div id="footer">
+    EST. 2020<br>
+    by Mae Kristine Vannirrie Sarmiento</br>
+    BSIT - 2A &nbsp;&nbsp; Web Development
+  </div>
+
+</body>
+
+</html>
